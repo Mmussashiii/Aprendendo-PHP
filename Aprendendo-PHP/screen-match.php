@@ -4,7 +4,7 @@ echo "Bem-vindo(a) ao screen match!\n";  // \n código de escape (quebra de linh
 
 $nomeFilme = "Top Gun - Maverick"; //string
 $anoLancamento = $argv[1] ?? "Informe o Ano de lançamento!\n"; //Recebe o primeiro imput do usuário no termial e atribui ele a esta váriavel 
-// o uso de ?? quivale a caso o retorno do conteudo a esquerda for null então prevalecera o valor a doreita 
+// o uso de ?? quivale a caso o retorno do conteudo a esquerda for null então prevalecera o valor a direita 
 $somaDeNotas = 9; //inteiro
 $somaDeNotas += 6; //inteiro
 $somaDeNotas += 8; //inteiro
@@ -20,11 +20,10 @@ echo "Nome do filme: " . $nomeFilme . "\n"; // O . é o operador de concatenaç�
 echo "Nota do filme: $notaFilme\n"; // Este segue o exemplo de interpolação, no qual no php é possivel seguir com o uso de aspas e exibir o necessário.
 echo "Ano de lançamento do filme: $anoLancamento\n";
 
-
-
-
-
-
-
-
-echo "5" + "10" . "\n"; // O php soma os numeros mesmo sendo string
+if ($anoLancamento > 2022) {
+    echo "Este filme é Lançamento!\n";
+} else if ($anoLancamento > 2020 && $anoLancamento <= 2022) {
+    echo "Este filme é Recente!\n";
+} else {
+    echo "Este filme é Antigo!\n";
+}
