@@ -40,7 +40,11 @@
 // com base no resultado do condição, se for true retorna o que está sinalizado a direita, se for falso retorna o que está sinalizado a esquerda,
 // funciona como um if else basico in line lendo o valor booleano de uma váriavel ou apresentando a condição diretamente na variavel final.
 
+// O match, embora permita criar algo como se fosse um bloco ele não é um bloco e sim uma expressão. Então, depois de avaliada, terá um valor que podemos atribuir a uma variável. 
 
+// o switch case, que é uma estrutura de controle de fluxo que permite executar diferentes ações com base no valor de uma expressão. É uma forma mais simplificada e legível de escrever vários blocos if/else encadeados, desde que as operações sejam somente de igualdade.
+
+// $argc é uma variável especial em PHP que armazena o número de argumentos passados para um script PHP quando ele é executado a partir da linha de comando.
 
 echo "Hello world!";
 

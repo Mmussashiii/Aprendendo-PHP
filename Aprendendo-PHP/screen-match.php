@@ -1,20 +1,22 @@
 <?php
 
 echo "Bem-vindo(a) ao screen match!\n";  // \n código de escape (quebra de linha).
+$nomeFilme = "Se beber não case";
+$nomeFilme = "Top Gun - Maverick"; 
+$nomeFilme = "Thor : Ragnarock"; 
 
-$nomeFilme = "Top Gun - Maverick"; //string
-$anoLancamento = $argv[1] ?? "Informe o Ano de lançamento!\n"; //Recebe o primeiro imput do usuário no termial e atribui ele a esta váriavel 
-// o uso de ?? quivale a caso o retorno do conteudo a esquerda for null então prevalecera o valor a direita 
-$somaDeNotas = 9; //inteiro
-$somaDeNotas += 6; //inteiro
-$somaDeNotas += 8; //inteiro
-$somaDeNotas += 7.5; //double ou float
-$somaDeNotas += 5; //inteiro
+$anoLancamento = 2022;
 
-$notaFilme = $somaDeNotas / 5; //double ou float
-$planoPrime = true; //boolean
+$quantidadeDeNotas = $argc - 1; 
 
-$incluidoNoPlano = $planoPrime || $anoLancamento < 2020;  //boolean
+for($contador = 1; $contador <= $argc; $contador++){
+    $somaDeNotas += $argv[$contador];
+}
+
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+$planoPrime = true; 
+
+$incluidoNoPlano = $planoPrime || $anoLancamento < 2020; 
 
 echo "Nome do filme: " . $nomeFilme . "\n"; // O . é o operador de concatenação, usado para juntar strings
 echo "Nota do filme: $notaFilme\n"; // Este segue o exemplo de interpolação, no qual no php é possivel seguir com o uso de aspas e exibir o necessário.
@@ -22,8 +24,19 @@ echo "Ano de lançamento do filme: $anoLancamento\n";
 
 if ($anoLancamento > 2022) {
     echo "Este filme é Lançamento!\n";
-} else if ($anoLancamento > 2020 && $anoLancamento <= 2022) {
+} else if ($anoLancamento >= 2020 && $anoLancamento <= 2022) {
     echo "Este filme é Recente!\n";
 } else {
     echo "Este filme é Antigo!\n";
 }
+
+$genero = match ($nomeFilme){// Expressão condicional match compara valores de uma váriavel com os valores definidos em cada caso para atribuir um valor a uma outra váriavel.
+    "Top Gun - Maverick" => "Ação",
+    "Thor : Ragnarock" => "super-herói",
+    "Se beber não case" => "Comédia",
+    default => "Gênero desconhecido"
+};
+
+echo "Gênero do filme: $genero\n";
+
+echo $argc; // Exibe o número de argumentos passados para o script, incluindo o nome do script.
