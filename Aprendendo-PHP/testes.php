@@ -82,3 +82,75 @@ for($contador = 1; $contador <= $quantidadeDeNotas; $contador++){
 //1. Inicialização: $contador = 1; Aqui, a variável $contador é inicializada com o valor 1.
 //2. Condição da repetição: $contador <= $quantidadeDeNotas; Esta é a condição que é verificada antes de cada iteração do loop. Enquanto essa condição for verdadeira, o loop continuará a ser executado.
 //3. Incremento: $contador++ Aqui, o valor de $contador é incrementado em 1 após cada iteração do loop.
+
+//exemplo de uso de loop while em PHP
+
+$contador = 1;
+while ($contador <= $quantidadeDeNotas) {
+    $somaDeNotas += $argv[$contador];
+    $contador++;
+}
+
+// No exemplo acima, o loop while continuará a executar enquanto a condição $contador <= $quantidadeDeNotas for verdadeira.
+// Dentro do loop, a soma das notas é atualizada e o contador é incrementado em 1 a cada iteração.
+
+
+
+
+//Exiba uma mensagem informando se o filme é lançamento ou não, dependendo do ano.
+
+if ($anoFilme > 2022) {
+    echo "\nEste filme é Lançamento!\n";
+} else {
+    echo "\nEste filme não é Lançamento!\n";
+}
+
+//Crie uma variável a partir de uma expressão condicional definindo o gênero do filme a partir de seu nome.
+
+$genero = match ($nomeFilme){
+    "Top Gun - Maverick" => "Ação",
+    "Thor : Ragnarock" => "super-herói",
+    "Se beber não case" => "Comédia",
+    default => "Gênero desconhecido"
+};
+
+
+//Faça um loop nas notas recebidas pela linha de comando para somá-las e depois calcular a média.
+
+$quantidadeDeNotas = $argc - 1;// Aqui calculamos a quantidade de notas recebidas subtraindo 1 do total de argumentos (argc) para desconsiderar o nome do arquivo
+for($contador = 1; $contador <= $quantidadeDeNotas; $contador++){// Loop para percorrer todas as notas recebidas
+    $somaDeNotas += $argv[$contador];// Somamos cada nota ao total armazenado em $somaDeNotas
+}
+
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;// Calculamos a média dividindo a soma total das notas pela quantidade de notas
+
+echo "\nA nota final do filme é: $notaFilme\n";
+
+
+//1 - Escreva um programa que exiba, na tela do usuário, todos os números ímpares de 0 à 100.
+
+for ($i = 0; $i <= 100; $i++) {// Loop de 0 a 100
+    if ($i % 2 != 0) {// Verifica se o número é ímpar usando o operador módulo (%)
+        echo "$i\n";// Exibe o número ímpar na tela
+    }
+}
+
+//2 - Crie um programa que, a partir de altura e peso, calcule o IMC e exiba a classificação do IMC.
+
+$altura = $argv[1];// Recebe altura e peso como argumentos da linha de comando
+$peso = $argv[2];
+$imc = $peso / ($altura * $altura);// Fórmula do IMC: peso (kg) dividido pela altura (m) ao quadrado
+echo "Seu IMC é: $imc\n";
+
+//3 - Desenvolva um programa que exiba na tela uma saudação (bom dia, boa tarde ou boa noite) dependendo do horário encontrado em uma variável (inteiro representando as horas).
+
+$hora = date("H"); // Função date com o parâmetro "H" retorna a hora atual no formato de 24 horas (00 a 23)
+if ($hora < 12) { // Condicional para verificar o período do dia
+    echo "Bom dia!\n";
+} elseif ($hora < 18) {// Se a hora for menor que 18 (6 PM), é tarde
+    echo "Boa tarde!\n";
+} else {
+    echo "Boa noite!\n";
+}
+
+//
