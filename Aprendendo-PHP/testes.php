@@ -153,4 +153,3 @@ if ($hora < 12) { // Condicional para verificar o período do dia
     echo "Boa noite!\n";
 }
 
-//
