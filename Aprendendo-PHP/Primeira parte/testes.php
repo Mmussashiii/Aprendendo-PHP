@@ -151,10 +151,7 @@ if ($hora < 12) { // Condicional para verificar o período do dia
     echo "Boa tarde!\n";
 } else {
     echo "Boa noite!\n";
-}
-
-<<<<<<< Updated upstream:Aprendendo-PHP/testes.php
-=======
+};
 //Crie um array associativo para armazenar as informações de um filme (nome, ano, nota, gênero) e exiba essas informações na tela.
 
 $filme = [ // abrimos nosso array associativo com colchetes [] e dentro dele definimos as chaves e os valores associados a cada chave usando o operador =>.
@@ -285,14 +282,3 @@ foreach ($familiares as $familiar) { // Usamos o foreach para iterar sobre o arr
 
 
 
-
-
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes:Primeira parte/testes.php
