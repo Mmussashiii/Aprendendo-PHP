@@ -153,3 +153,146 @@ if ($hora < 12) { // Condicional para verificar o período do dia
     echo "Boa noite!\n";
 }
 
+<<<<<<< Updated upstream:Aprendendo-PHP/testes.php
+=======
+//Crie um array associativo para armazenar as informações de um filme (nome, ano, nota, gênero) e exiba essas informações na tela.
+
+$filme = [ // abrimos nosso array associativo com colchetes [] e dentro dele definimos as chaves e os valores associados a cada chave usando o operador =>.
+    "nome" => "Thor: Ragnarok", // O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "nome" é a chave e "Thor: Ragnarok" é o valor associado a essa chave.
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "super-herói"
+];
+
+echo $filme["nome"] . "\n"; // Para acessar os valores de um array associativo, usamos a chave correspondente entre colchetes. Neste caso, $filme["nome"] retorna o valor associado à chave "nome", que é "Thor: Ragnarok".
+
+
+// O vardump() é uma função em PHP que exibe informações detalhadas sobre uma variável, incluindo seu tipo e valor. É frequentemente usada para depuração e análise de dados durante o desenvolvimento de código PHP.
+
+//crie um array que receba numeros e com um loop for adicione os numeros de 0 a 4 nesse array, depois use o var_dump() para exibir as informações do array criado.
+
+$numeros = [$argv]; // Aqui criamos um array chamado $numeros e atribuímos a ele o valor de $argv, que é um array especial em PHP que contém os argumentos passados para o script a partir da linha de comando.
+for ($i = 0; $i < 5; $i++) { // Loop de 0 a 4
+    $numeros[] = $i; // Adiciona o número atual ao array usando a sintaxe de colchetes []
+}
+var_dump($numeros); // Exibe informações detalhadas sobre o array $numeros, incluindo seu tipo e valor
+
+// O count() é uma função em PHP que retorna o número de elementos em um array ou a contagem de propriedades em um objeto. É comumente usada para determinar o tamanho de um array ou para verificar se um array está vazio.
+
+//por exemplo:
+
+$frutas = ["maçã", "banana", "laranja"]; // Criamos um array de frutas
+echo "Número de frutas: " . count($frutas) . "\n"; // Usamos a função count() para contar o número de elementos no array $frutas e exibimos o resultado na tela
+
+//ela pode também ser usada para verificar se um array está vazio, retornando 0 se não houver elementos:
+
+$frutas = []; // Criamos um array vazio
+if (count($frutas) === 0) { // Verificamos se o array está vazio usando count()
+    echo "O array de frutas está vazio.\n"; // Exibimos uma mensagem indicando que o array está vazio
+} else {
+    echo "O array de frutas contém " . count($frutas) . " frutas.\n"; // Se o array não estiver vazio, exibimos o número de frutas
+}
+
+//O foreach é uma estrutura de controle de fluxo em PHP que permite iterar sobre os elementos de um array ou objeto de forma mais simples e legível do que um loop for tradicional. Ele é especialmente útil para percorrer arrays associativos, onde você pode acessar tanto a chave quanto o valor de cada elemento durante a iteração.
+
+//por exemplo:
+
+$filme = [ // Criamos um array associativo para armazenar as informações de um filme
+    "nome" => "Thor: Ragnarok", // O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "nome" é a chave e "Thor: Ragnarok" é o valor associado a essa chave.
+    "ano" => 2021,// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "ano" é a chave e 2021 é o valor associado a essa chave.
+    "nota" => 7.8,// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "nota" é a chave e 7.8 é o valor associado a essa chave.
+    "genero" => "super-herói"// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "genero" é a chave e "super-herói" é o valor associado a essa chave.
+];
+
+foreach ($filme as $chave => $valor) { // Usamos o foreach para iterar sobre o array associativo $filme. A variável $chave recebe a chave de cada elemento e a variável $valor recebe o valor correspondente.
+    echo "$chave: $valor\n"; // Exibe a chave e o valor de cada elemento do array
+}
+
+//sum() é uma função em PHP que retorna a soma de todos os valores em um array. Ela é comumente usada para calcular a soma total de elementos numéricos em um array, facilitando operações matemáticas e agregações de dados.
+
+//por exemplo:
+
+$numeros = [1, 2, 3, 4, 5]; // Criamos um array de números
+$soma = array_sum($numeros); // Usamos a função array_sum() para calcular a soma total dos elementos do array $numeros e armazenamos o resultado na variável $soma
+echo "A soma dos números é: $soma\n"; // Exibimos a soma dos números na tela
+
+//array_sum() é uma função em PHP que retorna a soma dos valores de um array. Ela é usada para calcular a soma total de elementos numéricos em um array, facilitando operações matemáticas e agregações de dados. A função array_sum() percorre todos os elementos do array e retorna a soma total, ignorando quaisquer elementos que não sejam numéricos.
+
+//por exemplo:
+
+$valores = [10, 20, 30, "texto", 40]; // Criamos um array com valores numéricos e um valor de texto
+$soma = array_sum($valores); // Usamos a função array_sum() para calcular a soma total dos elementos do array $valores. A função irá ignorar o valor "texto" e somar apenas os valores numéricos.
+echo "A soma dos valores é: $soma\n"; // Exibimos a soma dos valores na tela, que será 100 (10 + 20 + 30 + 40) ignorando o valor "texto".
+
+//1 - Escreva um programa em PHP que remova os elementos duplicados de um array fornecido como entrada e exiba o array resultante. Por exemplo, se o array for [1, 2, 2, 3, 4, 4, 5], o programa deve exibir [1, 2, 3, 4, 5].
+
+$numeros = [1, 2, 2, 3, 4, 4, 5]; // Criamos um array com elementos duplicados
+
+foreach ($numeros as $numero) { // Usamos o foreach para iterar sobre o array $numeros
+    if (!in_array($numero, $numerosUnicos)) { // Verificamos se o número atual não está presente no array $numerosUnicos usando a função in_array()
+        $numerosUnicos[] = $numero; // Se o número não estiver presente, adicionamos ao array $numerosUnicos usando a sintaxe de colchetes []
+    }
+}
+echo "Array sem duplicados: ";
+foreach ($numerosUnicos as $numero) { // Usamos outro foreach para iterar sobre o array $numerosUnicos e exibir os números únicos na tela
+    echo "$numero ";// Exibe cada número único na tela
+}
+echo "\n";
+
+//2 - Percorra um array de notas (cada uma de 0 a 10) e exiba a nota do aluno em questão com a informação se o aluno foi aprovado ou não.
+
+$notas = [7.5, 8.0, 6.0, 9.0]; // Criamos um array de notas
+$media = array_sum($notas) / count($notas); // Calculamos a média das notas usando array_sum() para somar os valores e count() para contar o número de elementos no array
+echo "A média do aluno é: $media\n"; // Exibimos a média do aluno na tela
+
+foreach ($notas as $nota) {// Usamos o foreach para iterar sobre o array de notas
+    if ($nota >= 6.0) {// Verificamos se a nota é maior ou igual a 6.0 para determinar se o aluno foi aprovado
+        echo "Nota: $nota - Aprovado\n";// Se a nota for maior ou igual a 6.0, exibimos que o aluno foi aprovado
+    } else {
+        echo "Nota: $nota - Reprovado\n";// Se a nota for menor que 6.0, exibimos que o aluno foi reprovado
+    }
+}
+
+//3 - Defina um array associativo que representa uma conta bancária (com titular e saldo) e exiba suas informações na tela.
+
+$contaBancaria = [ // Criamos um array associativo para representar uma conta bancária
+    "titular" => "João Silva", // O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "titular" é a chave e "João Silva" é o valor associado a essa chave.
+    "saldo" => 1500.75 // O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "saldo" é a chave e 1500.75 é o valor associado a essa chave.
+];
+
+foreach ($contaBancaria as $chave => $valor) {// Usamos o foreach para iterar sobre o array associativo $contaBancaria. A variável $chave recebe a chave de cada elemento e a variável $valor recebe o valor correspondente.
+    echo "$chave: $valor\n"; // Exibe a chave e o valor de cada elemento do array
+}
+
+//4 - Crie um array contendo nomes de familiares seus e após sua criação adicione mais elementos ao array.
+
+$familiares = ["Maria", "José", "Ana"]; // Criamos um array com nomes de familiares
+$familiares[] = "Carlos"; // Adicionamos mais um elemento ao array usando a sintaxe de colchetes []
+$familiares[] = "Sofia"; // Adicionamos mais um elemento ao array usando a sintaxe de colchetes []
+echo "Nomes dos familiares: ";
+foreach ($familiares as $familiar) { // Usamos o foreach para iterar sobre o array $familiares e exibir os nomes na tela
+    echo "$familiar "; // Exibe o nome de cada familiar na tela
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes:Primeira parte/testes.php
