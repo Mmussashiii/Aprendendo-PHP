@@ -3,7 +3,7 @@
 function exibeMensagemLancamento ($ano){
     if ($ano > 2022) {
     echo "Este filme é Lançamento!\n";
-} else if ($ano >= 2020 && $ano <= 2022) {
+} elseif ($ano >= 2020 && $ano <= 2022) {
     echo "Este filme é Recente!\n";
 } else {
     echo "Este filme é Antigo!\n";
