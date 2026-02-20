@@ -59,6 +59,42 @@
 
 //array_sum() é uma função em PHP que retorna a soma dos valores de um array. Ela é usada para calcular a soma total de elementos numéricos em um array, facilitando operações matemáticas e agregações de dados. A função array_sum() percorre todos os elementos do array e retorna a soma total, ignorando quaisquer elementos que não sejam numéricos.
 
+// Para criar um array em PHP, você pode usar a função array() ou a sintaxe de colchetes [].
+
+// um array associativo é um tipo de array em PHP onde as chaves são strings em vez de números inteiros. Ele permite armazenar e acessar valores usando chaves personalizadas, tornando-o útil para representar dados estruturados, como informações de um usuário, produtos, etc.
+
+// para adicionar um elemento a um array associativo em PHP, você pode usar a sintaxe de colchetes [] para atribuir um valor a uma chave específica. Por exemplo:
+// $arrayAssociativo['chave'] = 'valor'; isso adiciona um elemento ao array associativo com a chave 'chave' e o valor 'valor'.
+// para acessar um elemento de um array associativo em PHP, você pode usar a chave correspondente entre colchetes []. Por exemplo:
+// $valor = $arrayAssociativo['chave']; isso atribui o valor associado à chave 'chave' à variável $valor. Certifique-se de que a chave exista no array para evitar erros de acesso a índices inexistentes.
+// para adicionar um novo elemento a um array você pode usar a função array_push() ou a sintaxe de colchetes []. Por exemplo: array_push($array, 'novo valor'); ou $array[] = 'novo valor';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
