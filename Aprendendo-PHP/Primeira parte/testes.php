@@ -271,6 +271,153 @@ foreach ($familiares as $familiar) { // Usamos o foreach para iterar sobre o arr
     echo "$familiar "; // Exibe o nome de cada familiar na tela
 }
 
+// Crie uma função que exibe uma mensagem informando se um filme é lançamento ou não;
+
+function exibeMensagemLancamento (int $ano): void { // Função para exibir a mensagem de lançamento do filme, recebendo o ano como parâmetro.
+    if ($ano > 2022) { // Verifica se o ano é maior que 2022, indicando que o filme é um lançamento.
+        echo "Este filme é Lançamento!\n";
+    } elseif ($ano >= 2020 && $ano <= 2022) {// Verifica se o ano está entre 2020 e 2022, indicando que o filme é recente.
+        echo "Este filme é Recente!\n";
+    } else {
+        echo "Este filme é Clássico!\n";// Se o ano for menor que 2020, exibimos que o filme é clássico
+    }
+}   
+
+//Crie a função responsável por determinar se um filme está ou não incluído no plano;
+
+function filmeIncluidoNoPlano (bool $incluidoNoPlano): bool {// Função para exibir se o filme está incluído no plano, recebendo um valor booleano como parâmetro.
+    if ($incluidoNoPlano) {// Verifica se o valor booleano é verdadeiro, indicando que o filme está incluído no plano.
+        echo "Este filme está incluído no plano!\n";
+        return true; // Retorna true para indicar que o filme está incluído no plano
+    } else {// Se o valor booleano for falso, exibimos que o filme não está incluído no plano
+        echo "Este filme não está incluído no plano!\n";
+        return false;// Retorna false para indicar que o filme não está incluído no plano
+    }
+}
+
+//Escreva uma função em PHP que receba dois números inteiros e uma string representando a operação matemática e retorne o resultado da operação.
+
+function numeroInteligente (int $num1, int $num2, string $operacao): int { // Função para realizar uma operação matemática entre dois números inteiros, recebendo os números e a operação como parâmetros, e retornando um valor inteiro.
+    switch ($operacao) { // Usamos um switch case para determinar qual operação matemática será realizada com base na string de operação fornecida.
+        case "soma": // Se a operação for "soma", realizamos a soma dos dois números
+            return $num1 + $num2;
+        case "subtracao": // Se a operação for "subtracao", realizamos a subtração dos dois números
+            return $num1 - $num2;
+        case "multiplicacao": // Se a operação for "multiplicacao", realizamos a multiplicação dos dois números
+            return $num1 * $num2;
+        case "divisao": // Se a operação for "divisao", realizamos a divisão dos dois números
+            if ($num2 != 0) { // Verificamos se o segundo número é diferente de zero para evitar divisão por zero
+                return $num1 / $num2;
+            } else {
+                echo "Erro: Divisão por zero não é permitida.\n";
+                return 0; // Retorna 0 ou algum valor específico para indicar erro de divisão por zero
+            }
+        default: // Se a operação não corresponder a nenhum dos casos anteriores, exibimos uma mensagem de erro
+            echo "Operação inválida. Por favor, escolha entre soma, subtracao, multiplicacao ou divisao.\n";
+            return 0; // Retorna 0 ou algum valor específico para indicar operação inválida
+    }
+}
+
+//Crie uma função em PHP que calcule o IMC baseado na altura e peso passados por parâmetro e exiba a classificação do IMC.
+
+function calcularIMC (float $peso, float $altura): float { // Função para calcular o IMC, recebendo peso e altura como parâmetros e retornando um valor float.
+    if ($altura > 0) { // Verificamos se a altura é maior que zero para evitar divisão por zero
+        return $peso / ($altura * $altura); // Calculamos o IMC usando a fórmula: peso / (altura * altura)
+    } else {
+        echo "Erro: Altura inválida. Por favor, informe uma altura maior que zero.\n";
+        return 0; // Retorna 0 ou algum valor específico para indicar erro de altura inválida
+    }
+}
+
+function exibirClassificacaoIMC (float $imc): void { // Função para exibir a classificação do IMC, recebendo o valor do IMC como parâmetro e sem retorno (void).
+    if ($imc < 18.5) { // Se o IMC for menor que 18.5, exibimos que está abaixo do peso
+        echo "Classificação: Abaixo do peso.\n";
+    } elseif ($imc >= 18.5 && $imc < 25) { // Se o IMC estiver entre 18.5 e 24.9, exibimos que está no peso normal
+        echo "Classificação: Peso normal.\n";
+    } elseif ($imc >= 25 && $imc < 30) { // Se o IMC estiver entre 25 e 29.9, exibimos que está com sobrepeso
+        echo "Classificação: Sobrepeso.\n";
+    } else { // Se o IMC for maior ou igual a 30, exibimos que está obeso
+        echo "Classificação: Obesidade.\n";
+    }
+}
+
+calcularIMC(peso: $argv[1], altura: $argv[2]); // Chamamos a função calcularIMC passando os valores de peso e altura recebidos como argumentos da linha de comando.
+exibirClassificacaoIMC(calcularIMC(peso: $argv[1], altura: $argv[2])); // Chamamos a função exibirClassificacaoIMC passando o resultado da função calcularIMC para exibir a classificação do IMC.
+
+//crie uma função em php para converter graus Celsius para Fahrenheit
+
+function celsiusParaFahrenheit (float $celsius): float { // Função para converter graus Celsius para Fahrenheit, recebendo a temperatura em Celsius como parâmetro e retornando a temperatura em Fahrenheit como um valor float.
+    return ($celsius * 9/5) + 32; // Fórmula de conversão: (Celsius * 9/5) + 32
+}
+
+celsiusParaFahrenheit(celsius: $argv[1]); // Chamamos a função celsiusParaFahrenheit passando o valor de Celsius recebido como argumento da linha de comando para realizar a conversão e obter a temperatura em Fahrenheit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
