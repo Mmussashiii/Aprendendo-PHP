@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/funcoes.php"; // Inclui o arquivo funcoes.php, que contém as definições das funções usadas neste script.
+require __DIR__ . "/src/funcoes.php"; // Inclui o arquivo funcoes.php, que contém as definições das funções usadas neste script.
 
 echo "Bem-vindo(a) ao screen match!\n";  // \n código de escape (quebra de linha).
 $nomeFilme = "Se beber não case";
@@ -36,12 +36,13 @@ $genero = match ($nomeFilme){// Expressão condicional match compara valores de 
 
 echo "Gênero do filme: $genero\n";
 
-$filme = [
-    "nome" => "thor : ragnarock",
-    "ano" => 2021,
-    "nota" => 7.8,
-    "genero" => "super-herói"
-];
+$filme = CriaFilme(  // Chama a função CriaFilme para criar um array associativo representando o filme, passando os detalhes do filme como argumentos.
+    nome: "thor : ragnarock", // Estamos usando a sintaxe de argumentos nomeados para criar um array associativo representando o filme, onde cada chave é o nome do argumento e o valor é o dado correspondente.
+     anoLancamento: 2021, // O ano de lançamento do filme é definido como 2021, indicando que o filme foi lançado nesse ano.
+      nota: 7.8, // A nota do filme é definida como 7.8, representando a avaliação do filme em uma escala de 0 a 10.
+       genero: "super-herói"// O gênero do filme é definido como "super-herói", indicando que o filme pertence a esse gênero específico.
+); // Chama a função CriaFilme para criar um array associativo representando o filme, passando os detalhes do filme como argumentos.
+
 
 echo $filme["ano"];
 
@@ -65,9 +66,9 @@ var_dump(substr($filme['nome'], 0, $posicaoDoispontos)); // A função substr() 
 
 var_dump(json_decode('{"nome":"thor : ragnarock","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}'), true);
 
+$filmeComoStringJson = json_encode($filme); // A função json_encode() é usada para converter o array associativo $filme em uma string no formato JSON, facilitando o armazenamento e a transmissão dos dados de forma estruturada.
 
-
-
+file_put_contents('filme.json', $filmeComoStringJson); // A função file_put_contents() é usada para escrever a string JSON representando o filme em um arquivo chamado 'filme.json', permitindo salvar os dados do filme em um formato legível e acessível para futuras consultas ou compartilhamento.
 
 
 

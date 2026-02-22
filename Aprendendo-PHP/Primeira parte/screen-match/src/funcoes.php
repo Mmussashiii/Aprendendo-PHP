@@ -14,7 +14,14 @@ function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool { // Funç�
     return $planoPrime || $anoLancamento < 2020;// Retorna true se o planoPrime for verdadeiro ou se o ano de lançamento for anterior a 2020, indicando que o filme está incluído no plano.
 };
 
-
+function CriaFilme(string $nome, int $anoLancamento, float $nota, string $genero): array { // Função para criar um filme, recebendo o nome, ano, nota e gênero como parâmetros, e retornando um array associativo representando o filme.
+    return [
+        "nome" => $nome,
+        "ano" => $anoLancamento,
+        "nota" => $nota,
+        "genero" => $genero
+    ];
+}
 
 
 

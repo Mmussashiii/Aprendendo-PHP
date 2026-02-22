@@ -24,21 +24,22 @@ Incluso no plano prime? : $planoPrime"; // Exibição do nome do filme, seu ano,
 
 // Exemplo de estrutura switch case em PHP
 
-switch (expressão) {
-   case valor1:
-      // código a ser executado se a expressão for igual a valor1
-      break;
-   case valor2:
-      // código a ser executado se a expressão for igual a valor2
-      break;
-   case valor3:
-      // código a ser executado se a expressão for igual a valor3
-      break;
-
-   default:
-      // código a ser executado se a expressão não for igual a nenhum valor
-      break;
+switch ($nomeFilme) { // A expressão dentro do switch é avaliada e comparada com os valores definidos em cada case. O código correspondente ao case que corresponde à expressão será executado.
+    case "Top Gun - Maverick": // Se a expressão for igual a "Top Gun - Maverick", o código dentro deste case será executado.
+        echo "\nO gênero do filme é: Ação\n";
+        break; // O break é usado para sair do switch case após a execução do código correspondente ao case.
+    case "Thor : Ragnarock": // Se a expressão for igual a "Thor : Ragnarock", o código dentro deste case será executado.
+        echo "\nO gênero do filme é: Super-herói\n";
+        break; // O break é usado para sair do switch case após a execução do código correspondente ao case.
+    case "Se beber não case": // Se a expressão for igual a "Se beber não case", o código dentro deste case será executado.
+        echo "\nO gênero do filme é: Comédia\n";
+        break; // O break é usado para sair do switch case após a execução do código correspondente ao case.
+    default: // O case default é opcional e é executado quando nenhum dos cases especificados é atendido. Neste caso, se o nome do filme não corresponder a nenhum dos cases anteriores, este bloco de código será executado.
+        echo "\nGênero desconhecido\n";
+        break; // O break é usado para sair do switch case após a execução do código correspondente ao default.
 }
+
+
 
 //A expressão é uma variável ou uma expressão de código que será avaliada. Cada case é uma possível condição que pode ser atendida pela expressão.
 //Quando a expressão é igual ao valor especificado em um determinado case, o código correspondente a esse case será executado. A palavra-chave break
@@ -340,7 +341,6 @@ function exibirClassificacaoIMC (float $imc): void { // Função para exibir a c
         echo "Classificação: Obesidade.\n";
     }
 }
-
 calcularIMC(peso: $argv[1], altura: $argv[2]); // Chamamos a função calcularIMC passando os valores de peso e altura recebidos como argumentos da linha de comando.
 exibirClassificacaoIMC(calcularIMC(peso: $argv[1], altura: $argv[2])); // Chamamos a função exibirClassificacaoIMC passando o resultado da função calcularIMC para exibir a classificação do IMC.
 
@@ -349,7 +349,6 @@ exibirClassificacaoIMC(calcularIMC(peso: $argv[1], altura: $argv[2])); // Chamam
 function celsiusParaFahrenheit (float $celsius): float { // Função para converter graus Celsius para Fahrenheit, recebendo a temperatura em Celsius como parâmetro e retornando a temperatura em Fahrenheit como um valor float.
     return ($celsius * 9/5) + 32; // Fórmula de conversão: (Celsius * 9/5) + 32
 }
-
 celsiusParaFahrenheit(celsius: $argv[1]); // Chamamos a função celsiusParaFahrenheit passando o valor de Celsius recebido como argumento da linha de comando para realizar a conversão e obter a temperatura em Fahrenheit.
 
 
@@ -359,7 +358,6 @@ function menorNota (array $notas): float { // Função para recuperar a menor no
     sort($notas); // Usamos a função sort() para ordenar as notas em ordem crescente
     return min($notas); // Usamos a função min() para retornar a menor nota do array ordenado
 }
-
 menorNota($argv); // Chamamos a função menorNota passando o array de notas recebido como argumento da linha de comando para obter a menor nota do filme.
 
 //Recupere, a partir do nome de um filme, a parte da string até o caractere :;
@@ -372,7 +370,6 @@ function recuperarParteStringAteDoisPontos(string $nomeFilme): string { // Funç
         return $nomeFilme; // Se o caractere : não for encontrado, retornamos o nome do filme completo
     }
 }
-
 recuperarParteStringAteDoisPontos($argv[1]); // Chamamos a função recuperarParteStringAteDoisPontos passando o nome do filme recebido como argumento da linha de comando para obter a parte da string até o caractere :.
 
 //Escreva um programa em PHP que inicialize um array de notas e exiba somente as 3 maiores notas do array.
@@ -381,7 +378,6 @@ function exibirTresMaioresNotas (array $notas): array { // Função para exibir 
     rsort($notas); // Usamos a função rsort() para ordenar as notas em ordem decrescente
     return array_slice($notas, 0, 3); // Usamos a função array_slice() para retornar as 3 maiores notas do array ordenado
 }
-
 exibirTresMaioresNotas($argv); // Chamamos a função exibirTresMaioresNotas passando o array de notas recebido como argumento da linha de comando para obter as 3 maiores notas do filme.
 
 //Crie um programa em PHP que transforme a string “Vinicius Dias,1997,Programador” em um array em que cada item está separado por vírgulas.
@@ -389,7 +385,6 @@ exibirTresMaioresNotas($argv); // Chamamos a função exibirTresMaioresNotas pas
 function transformarStringEmArray (string $dados): array { // Função para transformar uma string em um array, recebendo a string como parâmetro e retornando um array com os itens separados por vírgulas.
     return explode(",", $dados); // Usamos a função explode() para dividir a string em um array, usando a vírgula como delimitador
 }
-
 transformarStringEmArray("Vinicius Dias,1997,Programador"); // Chamamos a função transformarStringEmArray passando a string "Vinicius Dias,1997,Programador" para obter um array com os itens separados por vírgulas.
 
 //Escreva uma função em PHP que receba um array de strings por parâmetro e o retorne ordenado em ordem alfabética.
@@ -398,40 +393,84 @@ function ordenarArrayStrings(array $strings): array { // Função para ordenar u
     sort($strings); // Usamos a função sort() para ordenar o array em ordem alfabética
     return $strings; // Retornamos o array ordenado
 }
-
 ordenarArrayStrings(["banana", "maçã", "laranja"]); // Chamamos a função ordenarArrayStrings passando um array de strings para obter o array ordenado em ordem alfabética.
 
+//Transforme o array associativo $filme em um JSON e escreva o resultado em um arquivo;
 
+$filmeArray = [ // Criamos um array associativo para armazenar as informações de um filme
+    "nome" => "Thor: Ragnarok", // O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "nome" é a chave e "Thor: Ragnarok" é o valor associado a essa chave.
+    "ano" => 2021,// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "ano" é a chave e 2021 é o valor associado a essa chave.
+    "nota" => 7.8,// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "nota" é a chave e 7.8 é o valor associado a essa chave.
+    "genero" => "super-herói"// O operador => é usado para associar um valor a uma chave em um array associativo. Neste caso, "genero" é a chave e "super-herói" é o valor associado a essa chave.
+];
+function escreverFilmeEmArquivo(array $filme, string $caminhoArquivo): void { // Função para escrever o array associativo $filme em um arquivo JSON, recebendo o array de filme e o caminho do arquivo como parâmetros.
+    $json = json_encode($filme); // Usamos a função json_encode() para converter o array associativo $filme em uma string JSON
+    file_put_contents($caminhoArquivo, $json); // Usamos a função file_put_contents() para escrever a string JSON no arquivo especificado pelo caminho $caminhoArquivo
+}
+escreverFilmeEmArquivo($filmeArray, __DIR__ . "/filme.json");// Chamamos a função escreverFilmeEmArquivo passando o array associativo $filmeArray e o caminho do arquivo "filme.json" para escrever os dados do filme em um arquivo JSON.
 
+// agora leia o conteúdo em JSON e transforme-o em um array associativo no PHP.
 
+$caminhoArquivo = __DIR__ . "/filme.json"; // Definimos o caminho do arquivo JSON usando a constante __DIR__ para obter o diretório atual e concatenando com o nome do arquivo "filme.json"
+function lerFilmeDeArquivo(string $caminhoArquivo): array { // Função para ler o conteúdo de um arquivo JSON e transformá-lo em um array associativo, recebendo o caminho do arquivo como parâmetro e retornando o array associativo.
+    $json = file_get_contents($caminhoArquivo); // Usamos a função file_get_contents() para ler o conteúdo do arquivo JSON especificado pelo caminho $caminhoArquivo e armazenamos a string JSON na variável $json
+    return json_decode($json, true); // Usamos a função json_decode() para converter a string JSON de volta para um array associativo, passando true como segundo parâmetro para obter um array associativo em vez de um objeto
+}
 
+// Escreva um programa em PHP que abra um arquivo chamado teste.txt para ler a primeira linha e depois o fecha.
 
+$caminhoArquivoTeste = __DIR__ . "/teste.txt"; // Definimos o caminho do arquivo teste.txt usando a constante __DIR__ para obter o diretório atual e concatenando com o nome do arquivo "teste.txt"
+function lerPrimeiraLinhaArquivo(string $caminhoArquivo): string { // Função para ler a primeira linha de um arquivo, recebendo o caminho do arquivo como parâmetro e retornando a primeira linha como uma string.
+    $arquivo = fopen($caminhoArquivo, "r"); // Usamos a função fopen() para abrir o arquivo especificado pelo caminho $caminhoArquivo em modo de leitura ("r") e armazenamos o recurso do arquivo na variável $arquivo
+    if ($arquivo) { // Verificamos se o arquivo foi aberto com sucesso
+        $primeiraLinha = fgets($arquivo); // Usamos a função fgets() para ler a primeira linha do arquivo e armazenamos na variável $primeiraLinha
+        fclose($arquivo); // Usamos a função fclose() para fechar o arquivo após a leitura
+        return $primeiraLinha; // Retornamos a primeira linha lida do arquivo
+    } else {
+        echo "Erro ao abrir o arquivo.\n"; // Se o arquivo não puder ser aberto, exibimos uma mensagem de erro
+        return ""; // Retornamos uma string vazia para indicar que houve um erro na abertura do arquivo
+    }
+}
+lerPrimeiraLinhaArquivo($caminhoArquivoTeste); // Chamamos a função lerPrimeiraLinhaArquivo passando o caminho do arquivo teste.txt para ler a primeira linha do arquivo e obter seu conteúdo.
 
+//Escreva um programa em PHP que abra o arquivo teste.txt, acrescente a frase "PHP é incrível!" no final do arquivo e depois o feche.
 
+$caminhoArquivo = __DIR__ . "teste.txt";
 
+function acrescentarFraseNoArquivo(string $caminhoArquivo, string $frase): void { // Função para acrescentar uma frase no final de um arquivo, recebendo o caminho do arquivo e a frase como parâmetros.
+    $arquivo = fopen($caminhoArquivo, "a"); // Usamos a função fopen() para abrir o arquivo especificado pelo caminho $caminhoArquivo em modo de escrita ("a" para append) e armazenamos o recurso do arquivo na variável $arquivo
+    if ($arquivo) { // Verificamos se o arquivo foi aberto com sucesso
+        fwrite($arquivo, $frase . "\n"); // Usamos a função fwrite() para escrever a frase no final do arquivo, adicionando uma nova linha após a frase
+        fclose($arquivo); // Usamos a função fclose() para fechar o arquivo após a escrita
+    } else {
+        echo "Erro ao abrir o arquivo.\n"; // Se o arquivo não puder ser aberto, exibimos uma mensagem de erro
+    }
+}
+acrescentarFraseNoArquivo($caminhoArquivo, "PHP é incrível!"); // Chamamos a função acrescentarFraseNoArquivo passando o caminho do arquivo teste.txt e a frase "PHP é incrível!" para acrescentar essa frase no final do arquivo.
 
+// Crie um programa que converta a string '{"nome":"Vinicius","anoNascimento":1997,"profissao":"Dev"}' em um objeto.
 
+$stringJson = '{"nome":"Vinicius","anoNascimento":1997,"profissao":"Dev"}'; // Definimos a string JSON que representa um objeto com as informações de nome, ano de nascimento e profissão
+function converterJsonEmObjeto(string $json): object { // Função para converter uma string JSON em um objeto, recebendo a string JSON como parâmetro e retornando o objeto resultante.
+    return json_decode($json); // Usamos a função json_decode() para converter a string JSON em um objeto PHP
+}
+$objeto = converterJsonEmObjeto($stringJson); // Chamamos a função converterJsonEmObjeto passando a string JSON para converter em um objeto PHP
+var_dump($objeto); // Exibimos o objeto resultante usando var_dump() para verificar seu conteúdo e tipo.
 
+//Escreva uma função responsável por criar um filme com todos os valores necessários e exibir as informações desse filme na tela.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function criarFilme(string $nome, int $ano, float $nota, string $genero): void { // Função para criar um filme com os valores fornecidos e exibir suas informações na tela, recebendo o nome, ano, nota e gênero como parâmetros.
+    $filme = [ // Criamos um array associativo para representar o filme
+        "nome" => $nome, // O operador => é usado para associar o valor do parâmetro $nome à chave "nome" no array associativo
+        "ano" => $ano, // O operador => é usado para associar o valor do parâmetro $ano à chave "ano" no array associativo
+        "nota" => $nota, // O operador => é usado para associar o valor do parâmetro $nota à chave "nota" no array associativo
+        "genero" => $genero // O operador => é usado para associar o valor do parâmetro $genero à chave "genero" no array associativo
+    ];
+    foreach ($filme as $chave => $valor) { // Usamos um foreach para iterar sobre o array associativo do filme e exibir suas informações na tela
+        echo "$chave: $valor\n"; // Exibe a chave e o valor de cada elemento do array do filme na tela
+    }
+}
+criarFilme(nome: "Inception", ano: 2010, nota: 8.8, genero: "Sci-fi"); // Chamamos a função criarFilme passando os valores para nome, ano, nota e gênero do filme para criar o filme e exibir suas informações na tela.
 
 
 

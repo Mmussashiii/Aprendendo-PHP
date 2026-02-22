@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exportador do Screen Match</h1>
+
+    <form action="exporta-arquivo.php" method="post">
+        <fieldset>
+            <label for="nome">nome:</label>
+            <input type="text" name="nome" id="nome" required>
+        </fieldset>
+
+        <fieldset>
+            <label for="ano">ano:</label>
+            <input type="number" name="ano" id="ano" required>
+        </fieldset>
+
+        <fieldset>
+            <label for="nota">nota:</label>
+            <input type="number" name="nota" id="nota" step="0.1" required>
+        </fieldset>
+
+        <fieldset>
+            <label for="genero">genero:</label>
+            <select name="genero" id="genero">
+                <option value="super-heroi">super-herói</option>
+                <option value="comedia">Comédia</option>
+                <option value="acao">Ação</option>
+            </select>
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

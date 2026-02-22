@@ -131,6 +131,85 @@
 // json_decode($jsonString, true) retornará um array associativo representando os dados JSON contidos na string $jsonString. O segundo parâmetro,
 // quando definido como true, indica que o resultado deve ser um array associativo em vez de um objeto.
 
+//file_put_contents() é uma função em PHP que escreve uma string em um arquivo. Ela é usada para criar ou sobrescrever um arquivo com o conteúdo especificado,
+// facilitando a gravação de dados em arquivos. Por exemplo, file_put_contents('arquivo.txt', 'Conteúdo do arquivo') criará um arquivo chamado 'arquivo.txt' e
+// escreverá a string 'Conteúdo do arquivo' dentro dele. Se o arquivo já existir, ele será sobrescrito com o novo conteúdo. Se o arquivo não existir,
+// ele será criado automaticamente. Essa função é útil para salvar dados, como logs, configurações ou qualquer informação que precise ser armazenada em um
+// arquivo.
+
+//file_get_contents() é uma função em PHP que lê o conteúdo de um arquivo e retorna como uma string. Ela é usada para obter os dados de um arquivo,
+// facilitando a leitura de informações armazenadas em arquivos. Por exemplo, file_get_contents('arquivo.txt') retornará o conteúdo do arquivo 'arquivo.txt'
+// como uma string.
+
+//criamos a pasta src para organizar melhor os arquivos do projeto, e dentro dela criamos o arquivo funcoes.php para armazenar as funções que serão usadas
+// em nosso projeto, isso ajuda a manter o código mais limpo e organizado, facilitando a manutenção e a reutilização das funções em diferentes partes do
+// projeto. até mesmo futuramente por questões de segurança, podemos limitar o acesso a esse arquivo, já que ele não precisa ser acessado diretamente,
+// e sim apenas por meio de outros arquivos que o incluam usando require ou include.
+
+// a diferença entre include e require é que o include gera um aviso (warning) se o arquivo não for encontrado, mas o script continua a execução,
+// enquanto o require gera um erro fatal e interrompe a execução do script se o arquivo não for encontrado. Isso significa que require é mais rigoroso e
+// recomendado quando o arquivo é essencial para o funcionamento do script.
+
+//As declarações include_once e require_once incluem e avaliam o arquivo informado durante a execução do script da mesma forma que include e require,
+// mas com uma única diferença: se o código do arquivo já foi incluído, não o fará novamente. Como o nome sugere, o arquivo será incluído somente uma vez.
+//Essas instruções podem ser utilizadas nos casos em que o mesmo arquivo pode ser incluído e avaliado mais de uma vez durante uma execução de um script 
+//em particular, neste caso, ajudará a evitar problemas como redefinição de funções, reatribuição de valores de variáveis etc.
+
+
+// o $_POST é uma variável superglobal em PHP que é usada para coletar dados enviados por meio de um formulário HTML usando o método POST.
+// Ele é um array associativo que armazena os valores dos campos do formulário, permitindo que você acesse e processe esses dados em seu script PHP.
+// Por exemplo, se um formulário tiver um campo de entrada com o nome "nome", você pode acessar o valor enviado usando $_POST['nome'].
+
+// o $_GET é uma variável superglobal em PHP que é usada para coletar dados enviados por meio de um formulário HTML usando o método GET ou para acessar
+// parâmetros passados na URL. Ele é um array associativo que armazena os valores dos campos do formulário ou os parâmetros da URL, permitindo que você acesse
+// e processe esses dados em seu script PHP. Por exemplo, se um formulário tiver um campo de entrada com o nome "nome" e for enviado usando o método GET,
+// você pode acessar o valor enviado usando $_GET['nome']. Da mesma forma, se a URL contiver um parâmetro como ?id=123, você pode acessar o valor do parâmetro
+// 'id' usando $_GET['id'].
+
+//header() é uma função em PHP que é usada para enviar cabeçalhos HTTP para o cliente. Ela é comumente usada para redirecionar o usuário para outra página,
+// definir o tipo de conteúdo da resposta, ou controlar o cache do navegador. Por exemplo, header('Location: nova-pagina.php') redirecionará o usuário para
+// 'nova-pagina.php'. É importante lembrar que a função header() deve ser chamada antes de qualquer saída ser enviada ao navegador, caso contrário, ela não
+// funcionará corretamente.
+
+
+//strict_types é uma diretiva em PHP que, quando habilitada, força a verificação rigorosa dos tipos de dados em tempo de execução.
+// Isso significa que, se uma função ou método espera um tipo específico de dado, e um valor de tipo diferente for passado, o PHP irá lançar um erro fatal.
+// Isso ajuda a evitar erros de tipo em tempo de execução e torna o código mais seguro e previsível.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
