@@ -100,18 +100,36 @@
 //nesse caso a função soma recebe dois parâmetros do tipo inteiro e retorna um valor do tipo inteiro, que é a soma dos dois parâmetros.
 // Especificar o tipo de retorno ajuda a garantir que a função retorne o tipo de dado esperado, melhorando a legibilidade e a segurança do código.
 
+//sort() é uma função em PHP que ordena os elementos de um array em ordem crescente. Ela é usada para organizar os dados de um array de forma ascendente,
+//facilitando a busca e a manipulação dos elementos. A função sort() modifica o array original, reordenando seus elementos. 
+//Se você quiser manter o array original e obter uma versão ordenada, pode usar a função asort() ou arsort() para ordenar mantendo as chaves associativas.
 
+//min() é uma função em PHP que retorna o menor valor de um array ou de uma lista de argumentos. Ela é usada para encontrar o valor mínimo entre um
+// conjunto de números, facilitando a comparação e a análise de dados. A função min() pode ser usada tanto com arrays quanto com uma lista de argumentos
+// separados por vírgula. Por exemplo, min(3, 5, 1) retornará 1, enquanto min([3, 5, 1]) também retornará 1.
 
+// o require serve para incluir um arquivo PHP em outro arquivo PHP. Ele é usado para reutilizar código, como funções, classes ou configurações, em diferentes 
+//partes de um projeto.
+// Quando o require é usado, o PHP tenta incluir o arquivo especificado e, se não conseguir encontrar o arquivo, ele gera um erro fatal e interrompe a execução
+// do script. Isso é útil para garantir que o código necessário seja incluído antes de continuar a execução do programa, evitando erros causados por arquivos
+// ausentes ou incorretos.
 
+// o __DIR__ é uma constante mágica em PHP que retorna o diretório do arquivo atual. Ele é usado para obter o caminho absoluto do diretório onde o script está
+// sendo executado, independentemente do local de onde o script foi chamado. Isso é especialmente útil para garantir que os caminhos dos arquivos sejam corretos
+// ao incluir ou requerer arquivos, evitando problemas relacionados a caminhos relativos e facilitando a organização do código em projetos maiores.
 
+// JSON é um formato de dados leve e fácil de ler, usado para transmitir dados entre um servidor e um cliente. Ele é baseado em texto e é amplamente utilizado 
+//para representar objetos e estruturas de dados em uma forma que pode ser facilmente interpretada por humanos e máquinas. O JSON é comumente usado em APIs 
+//para enviar e receber dados, e em PHP, você pode usar as funções json_encode() e json_decode() para trabalhar com dados JSON.
 
+//json_encode() é uma função em PHP que converte um valor PHP (como um array ou objeto) em uma string JSON. Ela é usada para criar uma representação JSON de dados
+// PHP, facilitando a transmissão de dados entre um servidor e um cliente ou para armazenar dados em formato JSON. Por exemplo, json_encode($array) retornará
+// uma string JSON representando o conteúdo do array.
 
-
-
-
-
-
-
+//json_decode() é uma função em PHP que converte uma string JSON em um valor PHP (como um array ou objeto). Ela é usada para interpretar dados JSON
+// recebidos de um servidor ou para ler dados armazenados em formato JSON, facilitando a manipulação de dados JSON em PHP. Por exemplo,
+// json_decode($jsonString, true) retornará um array associativo representando os dados JSON contidos na string $jsonString. O segundo parâmetro,
+// quando definido como true, indica que o resultado deve ser um array associativo em vez de um objeto.
 
 
 

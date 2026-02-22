@@ -281,7 +281,7 @@ function exibeMensagemLancamento (int $ano): void { // Função para exibir a me
     } else {
         echo "Este filme é Clássico!\n";// Se o ano for menor que 2020, exibimos que o filme é clássico
     }
-}   
+}
 
 //Crie a função responsável por determinar se um filme está ou não incluído no plano;
 
@@ -353,30 +353,53 @@ function celsiusParaFahrenheit (float $celsius): float { // Função para conver
 celsiusParaFahrenheit(celsius: $argv[1]); // Chamamos a função celsiusParaFahrenheit passando o valor de Celsius recebido como argumento da linha de comando para realizar a conversão e obter a temperatura em Fahrenheit.
 
 
+//Recupere a menor nota de array de notas de um filme. Dica: Você pode usar as funções sort e min
 
+function menorNota (array $notas): float { // Função para recuperar a menor nota de um array de notas, recebendo um array de notas como parâmetro e retornando a menor nota como um valor float.
+    sort($notas); // Usamos a função sort() para ordenar as notas em ordem crescente
+    return min($notas); // Usamos a função min() para retornar a menor nota do array ordenado
+}
 
+menorNota($argv); // Chamamos a função menorNota passando o array de notas recebido como argumento da linha de comando para obter a menor nota do filme.
 
+//Recupere, a partir do nome de um filme, a parte da string até o caractere :;
 
+function recuperarParteStringAteDoisPontos(string $nomeFilme): string { // Função para recuperar a parte da string até o caractere :, recebendo o nome do filme como parâmetro e retornando a parte da string como uma string.
+    $posicaoDoisPontos = strpos($nomeFilme, ":" ); // Usamos a função strpos() para encontrar a posição do caractere : no nome do filme
+    if ($posicaoDoisPontos !== false) { // Se o caractere : for encontrado (não for false)
+        return substr($nomeFilme, 0, $posicaoDoisPontos); // Usamos a função substr() para retornar a parte da string até o caractere :
+    } else {
+        return $nomeFilme; // Se o caractere : não for encontrado, retornamos o nome do filme completo
+    }
+}
 
+recuperarParteStringAteDoisPontos($argv[1]); // Chamamos a função recuperarParteStringAteDoisPontos passando o nome do filme recebido como argumento da linha de comando para obter a parte da string até o caractere :.
 
+//Escreva um programa em PHP que inicialize um array de notas e exiba somente as 3 maiores notas do array.
 
+function exibirTresMaioresNotas (array $notas): array { // Função para exibir as 3 maiores notas de um array, recebendo um array de notas como parâmetro e retornando um array com as 3 maiores notas.
+    rsort($notas); // Usamos a função rsort() para ordenar as notas em ordem decrescente
+    return array_slice($notas, 0, 3); // Usamos a função array_slice() para retornar as 3 maiores notas do array ordenado
+}
 
+exibirTresMaioresNotas($argv); // Chamamos a função exibirTresMaioresNotas passando o array de notas recebido como argumento da linha de comando para obter as 3 maiores notas do filme.
 
+//Crie um programa em PHP que transforme a string “Vinicius Dias,1997,Programador” em um array em que cada item está separado por vírgulas.
 
+function transformarStringEmArray (string $dados): array { // Função para transformar uma string em um array, recebendo a string como parâmetro e retornando um array com os itens separados por vírgulas.
+    return explode(",", $dados); // Usamos a função explode() para dividir a string em um array, usando a vírgula como delimitador
+}
 
+transformarStringEmArray("Vinicius Dias,1997,Programador"); // Chamamos a função transformarStringEmArray passando a string "Vinicius Dias,1997,Programador" para obter um array com os itens separados por vírgulas.
 
+//Escreva uma função em PHP que receba um array de strings por parâmetro e o retorne ordenado em ordem alfabética.
 
+function ordenarArrayStrings(array $strings): array { // Função para ordenar um array de strings em ordem alfabética, recebendo um array de strings como parâmetro e retornando o array ordenado.
+    sort($strings); // Usamos a função sort() para ordenar o array em ordem alfabética
+    return $strings; // Retornamos o array ordenado
+}
 
-
-
-
-
-
-
-
-
-
-
+ordenarArrayStrings(["banana", "maçã", "laranja"]); // Chamamos a função ordenarArrayStrings passando um array de strings para obter o array ordenado em ordem alfabética.
 
 
 
